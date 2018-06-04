@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>responsive-basic</title>
+	<link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
+	<!-- 노멀라이즈를 파일을 따로 안만들고 링크하는 법 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 반응형을 위해서는 해상도 조절을 해줘야합니다. -->
+	<style>
+	/* 데스크탑을 위한 코딩(지금까지 배운) */
+	header{width:800px; height:400px; background:green; margin:auto; background: url('flower.jpg') no-repeat; background-size: cover; transition: all 1s}
+		/* background-size:cover; 자동으로 꽉채웁니다. 편리함 */
+
+	.dimmer{ display:block; width:800px; height:400px; background:black; opacity: 0.3; position: absolute;}
+		/* 헤더 h1텍스트가 잘보이게 바탕을 어둡게 조정하는 레이어, absolute로 올려줘야 그 위에 올라가는 h1,p태그를 밀려나게 하지 않습니다 */
+
+	.header-texts {display: block; position: relative; top:150px; }
+		/* 헤더에 들어가는h1과 p를 span태그로 묶었습니다. 간단한 그룹핑시에는 div보다는 span을 많이 사용합니다. span태그가 상자형 태그가 아니라서 display:block으로 상자태그로 만들어줘야 합니다 중간에 오도록 top값 세팅*/
+
+	.header-texts h1{ text-align: center; font-size:3em;margin:0; color:white; }
+ 	.header-texts p{text-align: center; margin:0; font-weight: bold;color:white;}
+ 	
+ 	/*모바일을 위한 코딩*/
+ 	@media all and (max-width: 600px) { 
+ 		header{width:inherit; height:300px; }
+ 		.dimmer{height:300px;}
+ 		/*모바일 헤더는 높이를 300px로, 폭은 inherit로 초기값으로 재설정했습니다. 모든 CSS에서 inherit는 값을 주지 않았을 때의 값입니다*/
+
+ 		.header-texts{top:100px;}
+ 		.header-texts h1{ font-size:2em; }
+ 		/* 모바일 텍스트는 크기를 조절합니다 */
+	}
+	</style>
+</head>
+<body>
+	<header>
+		<span class="dimmer"></span>
+		<span class="header-texts">
+			<h1>responsive coding</h1>
+			<p>transform layouts to screen sizes</p>
+		</span>
+	</header>
+</body>		
+</html>
