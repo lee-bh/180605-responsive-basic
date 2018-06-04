@@ -1,0 +1,30 @@
+<!doctype html>
+<head>
+  <title>코딩실습 및 반응형 기초</title>
+  <script src="https://use.typekit.net/fdv0sur.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <style>
+    html { font-family: "Georgia"}
+    h2 { font-family: "source-han-serif-korean",serif; font-weight:400; margin-top:3em;}
+    body{ margin-left:100px; margin-top:100px;}
+    li{margin-bottom:0.5em}
+    h2{font-style:normal; font-weight:200}
+  </style>
+</head>
+<body>
+  
+  <h2>Responsive Basic</h2>
+  <p>화면 크기에 따라 레이아웃이 변하는 반응형 디자인을 실습해보겠습니다. <br>반응형 디자인을 위해서는 다음 2가지 사항이 기본적입니다.</p>
+
+  <h2>1. 헤드에 다음 코드를 삽입합니다</h2>
+  <p>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+
+  <h2>2. CSS(style)의 끝에 다음 코드를 추가합니다.</h2>
+  <p>@media all and (max-width: 767px) { ...내용 }</p>
+  <p>미디어에 따라 달라지는 코드입니다. 가로 해상도가 767px까지는 이 스타일을 적용하라는 뜻이므로<br> 모바일에 해당하는 스타일시트 내용을 작성합니다. 768px부터는 이전의 스타일로 돌아갑니다.</p>
+
+
+  <ul>
+    <li><a href="./responsive1/index.html" target="_blank">responsive</a></li>
+  </ul>
+</body>
