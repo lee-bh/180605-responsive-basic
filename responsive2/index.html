@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>responsive-basic</title>
+	<link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
+	<!-- 노멀라이즈를 파일을 따로 안만들고 링크하는 법 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 반응형을 위해서는 해상도 조절을 해줘야합니다. -->
+	<style>
+
+	/* 반복되는 공통설정은 태그에 설정해서 반복을 줄입니다.*/
+	span, img{display:block; overflow:hidden;} /* span태그에 지속적으로 display:block;이랑 overflow:hidden;이 들어가서 따로 뺐습니다*/
+	p{line-height: 1.6} /* p는 본문이라 한 번 전체적으로 세팅하는 것이 좋습니다 */
+	img{ width:100%;} /*이미지는 항상 폭을 꽉채웁니다*/ 
+
+
+	/* 데스크탑을 위한 코딩(지금까지 배운) */
+	header{width:900px; height:400px; background:green; margin:auto; background: url('flower.jpg') no-repeat; background-size: cover; transition: all 1s}
+		/* background-size:cover; 자동으로 꽉채웁니다. 편리함 */
+
+	.dimmer{ width:900px; height:400px; background:black; opacity: 0.3; position: absolute;}
+		/* 헤더 h1텍스트가 잘보이게 바탕을 어둡게 조정하는 레이어, absolute로 올려줘야 그 위에 올라가는 h1,p태그를 밀려나게 하지 않습니다 */
+
+	.header-texts { position: relative; top:150px; }
+		/* 헤더에 들어가는h1과 p를 span태그로 묶었습니다. 간단한 그룹핑시에는 div보다는 span을 많이 사용합니다. span태그가 상자형 태그가 아니라서 display:block으로 상자태그로 만들어줘야 합니다 중간에 오도록 top값 세팅*/
+
+	.header-texts h1{ text-align: center; font-size:3em;margin:0; color:white; }
+ 	.header-texts p{text-align: center; margin:0; font-weight: bold;color:white;}
+ 	
+ 	section{ width:900px; background: #EEE; margin:auto; margin-top: 3em; }
+ 	section:after{content:""; display: block; clear:both;}
+ 	.col3{ width:30%; margin:1.65%;} /*3단 구성 시 기본블럭 */
+ 	.section-texts{ padding:1.65%;  }
+ 	.no-padding{ padding:0; } /* 3단 기본블럭에 텍스트가 들어갈 경우, 폭이 정해져있으므로, 패딩값때문에 실제 폭보다 넓어집니다. 따라서, 패딩을 0으로 돌렸습니다. */
+ 	
+ 	.section-texts h2, .section-texts p{margin:0; }
+ 	.section-texts h2{margin-bottom: 0.5em;}
+
+ 	.left{ float:left; }
+ 	.right{float:right;}
+
+ 	/*모바일을 위한 코딩*/
+ 	@media all and (max-width: 600px) { 
+ 		header{width:inherit; height:300px; }
+ 		.dimmer{height:300px;}
+ 		/*모바일 헤더는 높이를 300px로, 폭은 inherit로 초기값으로 재설정했습니다. 모든 CSS에서 inherit는 값을 주지 않았을 때의 값입니다*/
+
+ 		.header-texts{top:100px;}
+ 		.header-texts h1{ font-size:2em; }
+ 		/* 모바일 텍스트는 크기를 조절합니다 */
+
+ 		section{width:inherit; margin-top: 1em;}
+ 		.col3{ width: inherit; margin:0; margin-bottom: 2em; }
+ 		.no-padding { padding:1.65%; }
+
+	}
+	</style>
+</head>
+<body>
+	<header>
+		<span class="dimmer"></span>
+		<span class="header-texts">
+			<h1>responsive coding</h1>
+			<p>transform layouts to screen sizes</p>
+		</span>
+	</header>
+	<section>
+		<div class="col3 left">
+			 <img src="rose.jpg">
+		</div>
+		<span class="section-texts">
+			<h2>장미, Rose</h2>
+			<p>장미과 장미속의 관목을 통틀어 이르는 말. 높이는 2~3m이며 잎은 어긋나고 깃 모양으로, 5~6월에 담홍색, 담자색, 흰색 등의 꽃이 핀다. 개량 품종이 많은 관상 꽃나무이다. 북반구의 온대와 아한대에 주로 분포한다. 장미는 광을 매우 좋아하는 식물이며 물빠짐이 좋고 공기유통이 비옥한 사양토에서 잘 자란다.</p>
+		</span>
+	</section>
+	<section>
+		<div class="col3 right">
+			 <img src="rose.jpg">
+		</div>
+		<span class="section-texts">
+			<h2>장미, Rose</h2>
+			<p>장미과 장미속의 관목을 통틀어 이르는 말. 높이는 2~3m이며 잎은 어긋나고 깃 모양으로, 5~6월에 담홍색, 담자색, 흰색 등의 꽃이 핀다. 개량 품종이 많은 관상 꽃나무이다. 북반구의 온대와 아한대에 주로 분포한다. 장미는 광을 매우 좋아하는 식물이며 물빠짐이 좋고 공기유통이 비옥한 사양토에서 잘 자란다.</p>
+		</span>
+	</section>
+	<section>
+		<span class="section-texts col3 left no-padding">
+			<h2>수련</h2>
+			<p>높이는 2~3m이며 잎은 어긋나고 깃 모양으로, 5~6월에 담홍색, 담자색, 흰색 등의 꽃이 핀다. 개량 품종이 많은 관상 꽃나무이다. 북반구의 온대와 아한대에 주로 분포한다. 장미는 광을 매우 좋아하는 식물이며 물빠짐이 좋고 공기유통이 비옥한 사양토에서 잘 자란다.</p>
+		</span>
+		<span class="section-texts col3 left no-padding">
+			<h2>백합</h2>
+			<p>높이는 2~3m이며 잎은 어긋나고 깃 모양으로, 5~6월에 담홍색, 담자색, 흰색 등의 꽃이 핀다. 개량 품종이 많은 관상 꽃나무이다. 북반구의 온대와 아한대에 주로 분포한다. 장미는 광을 매우 좋아하는 식물이며 물빠짐이 좋고 공기유통이 비옥한 사양토에서 잘 자란다.</p>
+		</span>
+		<span class="section-texts col3 left no-padding">
+			<h2>개망초</h2>
+			<p>높이는 2~3m이며 잎은 어긋나고 깃 모양으로, 5~6월에 담홍색, 담자색, 흰색 등의 꽃이 핀다. 개량 품종이 많은 관상 꽃나무이다. 북반구의 온대와 아한대에 주로 분포한다. 장미는 광을 매우 좋아하는 식물이며 물빠짐이 좋고 공기유통이 비옥한 사양토에서 잘 자란다.</p>
+		</span>
+	</section>	
+</body>		
+</html>
