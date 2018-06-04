@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>responsive ex</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
+	<style>
+	html{ font-family: 'Noto Sans KR' }
+	section { width:768px; margin: auto; background: #EEE; height:400px; position: relative; margin-bottom: 2em;padding:0; padding-bottom: 1em;}
+	section:after{clear:both; content:''; display: block}
+
+	h2,p,figure{margin:0; padding:0; line-height: 1.6}
+	h2 {font-size:1.3em; margin-bottom: 0.5em;}
+
+	.img{margin:0; padding:0; width:490px; height:300px; position: absolute; background-size:100% auto;}
+	.texts{display: block; width: 400px; background: none; position: absolute; padding:1em;}
+	
+	.col3{width: 30.3%;float:left;overflow:hidden;padding:1.5%;}
+	.col3 img{width:100%;}
+	.col3:after{ content:''; clear:both; display: block; }
+	.col-img{ display:block;height:250px; overflow: hidden; margin-bottom: 1em; }
+	</style>
+</head>
+
+<body>
+	<style>
+	.t1{ left:0px; top:140px; z-index: 4}
+	.f1{ background:url('min.jpg') no-repeat; background-size:100% auto; left:276px; top:0px;}
+	</style>	
+	<section>
+		<figure class="f1 img">
+		</figure>
+		<span class="t1 texts">
+			<h2>제목과 내용은 붙어다닙니다</h2>
+			<p>일정하게 맞추기 위해 texts라는 span요소에 넣었습니다. span요소는 원래 텍스트의 일부분을 지정하는 인라인 요소인데, 실제로는 큰 박스 안에 들어가는 소소한 박스들을 span으로 많이 처리하곤 합니다. 원래 인라인 요소이기 때문에 display:block을 통해 블록요소로 만들어줍니다. div요소로 모든 상자들을 처리하면 헤깔리기 때문이기도 하구요.</p>
+		</span>
+	</section>
+	
+	<style>
+	.t2{ left:300px; top:150px; background:black; color:white;}
+	.f2{ background: url('codecode.jpg') no-repeat; background-size: 100% auto; left: 0px; top:0px; }
+	</style>
+	<section>
+		<figure class="f2 img">
+		</figure>
+		<span class="t2 texts">
+			<h2>제목과 내용은 붙어다닙니다</h2>
+			<p>일정하게 맞추기 위해 texts라는 span요소에 넣었습니다. span요소는 원래 텍스트의 일부분을 지정하는 인라인 요소인데, 실제로는 큰 박스 안에 들어가는 소소한 박스들을 span으로 많이 처리하곤 합니다. 원래 인라인 요소이기 때문에 display:block을 통해 블록요소로 만들어줍니다. div요소로 모든 상자들을 처리하면 헤깔리기 때문이기도 하구요.</p>
+		</span>
+	</section>
+	
+	<section>
+		<figure class="col3" >
+			<span class="col-img">
+				<img src="diy-flower.jpg">
+			</span>
+			<h2>flower1</h2>
+			<p>본문패턴이 나갑니다. 이꽃은 민들레구요, 이꽃의 특징은 이렇습니다. 그렇게 해서 패턴이 끝납니다.</p>
+		</figure>
+		<figure class="col3">
+			<span class="col-img">
+				<img src="flower-min.jpg">
+			</span>
+			<h2>flower2</h2>
+			<p>본문패턴이 나갑니다. 이꽃은 민들레구요, 이꽃의 특징은 이렇습니다. 그렇게 해서 패턴이 끝납니다.</p>
+		</figure>
+		<figure class="col3">
+			<span class="col-img">
+				<img src="seed-min.jpg">
+			</span>
+			<h2>flower3</h2>
+			<p>본문패턴이 나갑니다. 이꽃은 민들레구요, 이꽃의 특징은 이렇습니다. 그렇게 해서 패턴이 끝납니다.</p>
+		</figure>
+	</section>
+	<style>
+
+	@media all and (max-width: 767px) { 
+		section{ width:inherit; height:inherit; }  
+    	.texts{ width:inherit; height:200px; 
+    		position: relative; left:0px; top:0px; 
+    		background: #EEE; color: black}
+
+    	.img{ width:100%; height:300px; 
+    		position: relative; left:0px; top:0px;}
+
+    	.col3{ width:97%; margin:0; }
+    	.col3 img{ width: 100% }
+    }
+
+	@media all and (min-width: 768px) {   
+	}
+	</style>
+</body>
+</html>
